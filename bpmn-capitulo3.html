@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 6: BPMN 2.0 Implementación y Herramientas - Portal Educativo de BPM y BPMN 2.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chapter-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Overlay para menú móvil -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Sidebar / Navegación lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i data-feather="activity"></i>
+          <span class="logo-text">BPM Portal</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i data-feather="chevron-left"></i>
+        </button>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-category">Categorías</div>
+        
+        <!-- Acordeón para BPM -->
+        <button class="accordion-toggle" id="bpm-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="layers"></i>
+            </div>
+            <span class="accordion-text">BPM</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpm-content">
+          <a href="bpm-capitulo1.html" class="accordion-item">
+            <span>Capítulo 1: Fundamentos</span>
+          </a>
+          <a href="bpm-capitulo2.html" class="accordion-item">
+            <span>Capítulo 2: Metodologías</span>
+          </a>
+          <a href="bpm-capitulo3.html" class="accordion-item">
+            <span>Capítulo 3: Implementación</span>
+          </a>
+        </div>
+        
+        <!-- Acordeón para BPMN 2.0 -->
+        <button class="accordion-toggle active" id="bpmn-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="git-branch"></i>
+            </div>
+            <span class="accordion-text">BPMN 2.0</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpmn-content" style="max-height: 500px;">
+          <a href="bpmn-capitulo1.html" class="accordion-item">
+            <span>Capítulo 4: Introducción</span>
+          </a>
+          <a href="bpmn-capitulo2.html" class="accordion-item">
+            <span>Capítulo 5: Elementos Avanzados</span>
+          </a>
+          <a href="bpmn-capitulo3.html" class="accordion-item active">
+            <span>Capítulo 6: Implementación</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menu-toggle">
+            <i data-feather="menu"></i>
+          </button>
+          <h2>Portal Educativo de BPM y BPMN 2.0</h2>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="theme-toggle">
+            <i data-feather="moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </header>
+      
+      <!-- Contenedor de página -->
+      <div class="page-container">
+        <!-- Dashboard del capítulo -->
+        <div class="dashboard">
+          <!-- Sidebar del dashboard -->
+          <div class="dashboard-sidebar">
+            <h3 class="dashboard-title">
+              <i data-feather="git-branch"></i>
+              Puntos Clave
+            </h3>
+            
+            <div class="key-points">
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="settings"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Implementación organizacional</h4>
+                  <p>Estrategias para adoptar BPMN 2.0 en diferentes tipos de organizaciones y gestionar el cambio.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="tool"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Herramientas BPMN</h4>
+                  <p>Comparativa de herramientas de modelado y características clave para seleccionar la más adecuada.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="play-circle"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Ejecución de procesos</h4>
+                  <p>Motores de ejecución BPMN, integración con sistemas de TI y monitoreo de procesos en ejecución.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="progress-container">
+              <div class="progress-label">Progreso del capítulo</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contenido principal del dashboard -->
+          <div class="dashboard-main">
+            <!-- Pestañas -->
+            <div class="tabs">
+              <button class="tab-button active" data-tab="tab-content">Contenido</button>
+              <button class="tab-button" data-tab="tab-resources">Recursos</button>
+              <button class="tab-button" data-tab="tab-exercises">Ejercicios</button>
+            </div>
+            
+            <!-- Contenido de las pestañas -->
+            <div id="tab-content" class="tab-content active">
+              <section class="section fade-in">
+                <h2 class="section-title">1. Implementación de BPMN 2.0 en Organizaciones</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.1 Estrategias para la adopción de BPMN 2.0</h3>
+                  <p>Enfoques efectivos para introducir BPMN 2.0 en diferentes tipos de organizaciones, considerando factores culturales y técnicos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.2 Integración de BPMN con metodologías BPM</h3>
+                  <p>Cómo combinar BPMN 2.0 con metodologías como Lean, Six Sigma y enfoques ágiles para maximizar los beneficios.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.3 Gestión del cambio en la implementación de BPMN</h3>
+                  <p>Estrategias para superar la resistencia y facilitar la adopción de BPMN 2.0 en todos los niveles de la organización.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">2. Herramientas de Modelado BPMN 2.0</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.1 Comparativa de herramientas de modelado BPMN</h3>
+                  <p>Análisis de las principales herramientas disponibles en el mercado, sus fortalezas y debilidades.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.2 Características clave de las herramientas BPMN</h3>
+                  <p>Funcionalidades esenciales que debe ofrecer una herramienta de modelado BPMN para ser efectiva.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.3 Demostración práctica de una herramienta BPMN</h3>
+                  <p>Guía paso a paso sobre cómo utilizar una herramienta de modelado BPMN para crear diagramas efectivos.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Demostración de herramienta BPMN" class="diagram-image">
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">3. Ejecución de Procesos BPMN</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.1 Motores de ejecución BPMN</h3>
+                  <p>Funcionamiento de los motores que permiten ejecutar procesos modelados en BPMN 2.0 y sus capacidades.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.2 Integración de BPMN con sistemas de TI</h3>
+                  <p>Estrategias para conectar modelos BPMN con sistemas empresariales existentes y nuevas tecnologías.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">3.3 Monitoreo y análisis de procesos BPMN en ejecución</h3>
+                  <p>Técnicas y herramientas para supervisar el rendimiento de los procesos y detectar oportunidades de mejora.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=250&width=500" alt="Dashboard de monitoreo de procesos" class="diagram-image">
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">4. Validación y Optimización de Modelos BPMN</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.1 Técnicas de validación de modelos BPMN</h3>
+                  <p>Métodos para verificar la corrección y completitud de los modelos BPMN antes de su implementación.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">4.2 Simulación de procesos BPMN</h3>
+                  <p>Uso de simulaciones para predecir el comportamiento y rendimiento de los procesos modelados.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=250&width=500" alt="Simulación de procesos BPMN" class="diagram-image">
+                    <div class="diagram-description">
+                      <p>Ejemplo de una simulación de proceso que muestra tiempos de ejecución, cuellos de botella y utilización de recursos.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.3 Optimización basada en análisis de datos</h3>
+                  <p>Aplicación de técnicas analíticas para identificar cuellos de botella y oportunidades de mejora en los procesos.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">5. Tendencias Futuras en BPMN y Modelado de Procesos</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.1 Integración de BPMN con IA y aprendizaje automático</h3>
+                  <p>Cómo las tecnologías emergentes están transformando el modelado y la ejecución de procesos de negocio.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.2 BPMN en la transformación digital</h3>
+                  <p>El papel de BPMN como facilitador de la transformación digital en las organizaciones modernas.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">5.3 Evolución futura de BPMN y estándares relacionados</h3>
+                  <p>Direcciones anticipadas para el desarrollo de BPMN y su integración con otros estándares emergentes.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=250&width=500" alt="Evolución de BPMN" class="diagram-image">
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div id="tab-resources" class="tab-content">
+              <div class="resources-container">
+                <h3 class="resources-title">Recursos adicionales</h3>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="file-text"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Guía de implementación de BPMN</h4>
+                    <p>Una guía completa sobre cómo implementar BPMN 2.0 en organizaciones y superar los desafíos comunes.</p>
+                    <a href="#" class="resource-link">Descargar PDF</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="video"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Video: Herramientas BPMN en acción</h4>
+                    <p>Una demostración visual de las principales herramientas de modelado BPMN y sus características distintivas.</p>
+                    <a href="#" class="resource-link">Ver video</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="link"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Enlaces recomendados</h4>
+                    <ul class="resource-links">
+                      <li><a href="#">Comparativa de motores de ejecución BPMN</a></li>
+                      <li><a href="#">Casos de éxito de implementación BPMN</a></li>
+                      <li><a href="#">Tendencias en automatización de procesos</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div id="tab-exercises" class="tab-content">
+              <div class="exercises-container">
+                <h3 class="exercises-title">Ejercicios prácticos</h3>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 1: Evaluación de herramientas BPMN</h4>
+                    <span class="exercise-badge">Intermedio</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Evalúa tres herramientas de modelado BPMN diferentes utilizando los criterios proporcionados y determina cuál sería la más adecuada para un caso específico.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 2: Plan de implementación BPMN</h4>
+                    <span class="exercise-badge">Avanzado</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Desarrolla un plan de implementación de BPMN para una organización ficticia, considerando aspectos técnicos, culturales y de gestión del cambio.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 3: Simulación y optimización de procesos</h4>
+                    <span class="exercise-badge">Avanzado</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Utiliza una herramienta de simulación para analizar el rendimiento de un proceso BPMN dado e identifica oportunidades de optimización basadas en los resultados.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Descargar modelo</button>
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navegación del capítulo -->
+        <div class="chapter-navigation">
+          <a href="bpmn-capitulo2.html" class="nav-button prev">
+            <i data-feather="arrow-left"></i>
+            Anterior: BPMN Elementos Avanzados
+          </a>
+          <div class="nav-spacer"></div>
+          <a href="#" class="nav-button disabled">
+            Fin de los capítulos
+            <i data-feather="check-circle"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">BPM & BPMN Portal</div>
+          <div class="footer-copyright">&copy; <span id="current-year">2025</span> Portal Educativo de BPM y BPMN 2.0</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

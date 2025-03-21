@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 4: BPMN 2.0 Introducción - Portal Educativo de BPM y BPMN 2.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chapter-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Overlay para menú móvil -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Sidebar / Navegación lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i data-feather="activity"></i>
+          <span class="logo-text">BPM Portal</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i data-feather="chevron-left"></i>
+        </button>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-category">Categorías</div>
+        
+        <!-- Acordeón para BPM -->
+        <button class="accordion-toggle" id="bpm-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="layers"></i>
+            </div>
+            <span class="accordion-text">BPM</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpm-content">
+          <a href="bpm-capitulo1.html" class="accordion-item">
+            <span>Capítulo 1: Fundamentos</span>
+          </a>
+          <a href="bpm-capitulo2.html" class="accordion-item">
+            <span>Capítulo 2: Metodologías</span>
+          </a>
+          <a href="bpm-capitulo3.html" class="accordion-item">
+            <span>Capítulo 3: Implementación</span>
+          </a>
+        </div>
+        
+        <!-- Acordeón para BPMN 2.0 -->
+        <button class="accordion-toggle active" id="bpmn-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="git-branch"></i>
+            </div>
+            <span class="accordion-text">BPMN 2.0</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpmn-content" style="max-height: 500px;">
+          <a href="bpmn-capitulo1.html" class="accordion-item active">
+            <span>Capítulo 4: Introducción</span>
+          </a>
+          <a href="bpmn-capitulo2.html" class="accordion-item">
+            <span>Capítulo 5: Elementos Avanzados</span>
+          </a>
+          <a href="bpmn-capitulo3.html" class="accordion-item">
+            <span>Capítulo 6: Implementación</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menu-toggle">
+            <i data-feather="menu"></i>
+          </button>
+          <h2>Portal Educativo de BPM y BPMN 2.0</h2>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="theme-toggle">
+            <i data-feather="moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </header>
+      
+      <!-- Contenedor de página -->
+      <div class="page-container">
+        <!-- Dashboard del capítulo -->
+        <div class="dashboard">
+          <!-- Sidebar del dashboard -->
+          <div class="dashboard-sidebar">
+            <h3 class="dashboard-title">
+              <i data-feather="git-branch"></i>
+              Puntos Clave
+            </h3>
+            
+            <div class="key-points">
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="info"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Definición de BPMN</h4>
+                  <p>Estándar internacional para el modelado de procesos de negocio que proporciona una notación gráfica para especificar procesos.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="target"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Objetivos clave</h4>
+                  <p>Proporcionar una notación estándar comprensible para todos los interesados en el negocio.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="box"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Elementos básicos</h4>
+                  <p>Eventos, actividades, gateways, flujos de secuencia, pools y lanes forman la base de la notación.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="progress-container">
+              <div class="progress-label">Progreso del capítulo</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contenido principal del dashboard -->
+          <div class="dashboard-main">
+            <!-- Pestañas -->
+            <div class="tabs">
+              <button class="tab-button active" data-tab="tab-content">Contenido</button>
+              <button class="tab-button" data-tab="tab-resources">Recursos</button>
+              <button class="tab-button" data-tab="tab-exercises">Ejercicios</button>
+            </div>
+            
+            <!-- Contenido de las pestañas -->
+            <div id="tab-content" class="tab-content active">
+              <section class="section fade-in">
+                <h2 class="section-title">1. Fundamentos de BPMN 2.0</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.1 ¿Qué es BPMN 2.0?</h3>
+                  <p>BPMN (Business Process Model and Notation) 2.0 es un estándar internacional para el modelado de procesos de negocio que proporciona una notación gráfica para especificar procesos de negocio en un diagrama de proceso de negocio.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.2 Historia y evolución de BPMN</h3>
+                  <p>BPMN fue desarrollado inicialmente por el Business Process Management Initiative (BPMI) y posteriormente adoptado por el Object Management Group (OMG). La versión 2.0, lanzada en 2011, amplió significativamente las capacidades del estándar.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">1.3 Objetivos y beneficios de BPMN 2.0</h3>
+                  <p>BPMN 2.0 busca proporcionar una notación estándar comprensible para todos los interesados en el negocio, desde analistas de negocio hasta desarrolladores técnicos, facilitando la comunicación y mejorando la gestión de procesos.</p>
+                  <div class="diagram-container">
+                    <div class="diagram">
+                      <img src="/placeholder.svg?height=300&width=500" alt="Beneficios de BPMN" class="diagram-image">
+                      <div class="diagram-legend">
+                        <div class="legend-item">
+                          <span class="legend-color" style="background-color: var(--primary);"></span>
+                          <span class="legend-text">Estandarización</span>
+                        </div>
+                        <div class="legend-item">
+                          <span class="legend-color" style="background-color: var(--secondary);"></span>
+                          <span class="legend-text">Comunicación</span>
+                        </div>
+                        <div class="legend-item">
+                          <span class="legend-color" style="background-color: var(--accent);"></span>
+                          <span class="legend-text">Implementación</span>
+                        </div>
+                        <div class="legend-item">
+                          <span class="legend-color" style="background-color: #14b8a6;"></span>
+                          <span class="legend-text">Análisis</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">2. Elementos Básicos de BPMN 2.0</h2>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.1 Eventos</h3>
+                  <p>Los eventos representan algo que ocurre durante el curso de un proceso. Pueden ser de inicio, intermedios o de fin, y pueden tener diferentes desencadenantes o resultados.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=200&width=500" alt="Eventos BPMN" class="diagram-image">
+                  </div>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.2 Actividades</h3>
+                  <p>Las actividades representan trabajo realizado dentro de un proceso. Pueden ser tareas atómicas o subprocesos compuestos por múltiples tareas.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=200&width=500" alt="Actividades BPMN" class="diagram-image">
+                  </div>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.3 Gateways (Compuertas)</h3>
+                  <p>Las compuertas controlan la divergencia y convergencia del flujo de secuencia, determinando ramificaciones, bifurcaciones, fusiones y uniones en el proceso.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=200&width=500" alt="Gateways BPMN" class="diagram-image">
+                  </div>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.4 Flujos de Secuencia</h3>
+                  <p>Los flujos de secuencia muestran el orden en que las actividades se realizarán en un proceso, conectando los diferentes elementos del diagrama.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.5 Pools y Lanes</h3>
+                  <p>Los pools representan participantes en un proceso, mientras que los lanes son subdivisiones dentro de un pool que organizan y categorizan actividades, a menudo representando roles o departamentos.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">3. Creación de Diagramas BPMN Simples</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.1 Estructura básica de un diagrama BPMN</h3>
+                  <p>Un diagrama BPMN básico incluye un evento de inicio, actividades conectadas por flujos de secuencia, posiblemente algunas compuertas para controlar el flujo, y uno o más eventos de fin.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">3.2 Representación de flujos de trabajo lineales</h3>
+                  <p>Los flujos de trabajo lineales son secuencias simples de actividades que se ejecutan una tras otra, desde un evento de inicio hasta un evento de fin.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=150&width=600" alt="Flujo de trabajo lineal BPMN" class="diagram-image">
+                    <div class="diagram-description">
+                      <p>Ejemplo de un flujo de trabajo lineal: Inicio → Recibir solicitud → Revisar solicitud → Aprobar solicitud → Notificar al cliente → Fin</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">3.3 Modelado de decisiones simples</h3>
+                  <p>Las decisiones simples se modelan utilizando compuertas exclusivas (XOR) que dirigen el flujo por uno de varios caminos posibles basados en una condición.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=200&width=600" alt="Decisión simple BPMN" class="diagram-image">
+                    <div class="diagram-description">
+                      <p>Ejemplo de una decisión simple: Inicio → Revisar solicitud → ¿Aprobada? → [Sí] → Procesar aprobación → [No] → Notificar rechazo → Fin</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">4. Mejores Prácticas en el Modelado con BPMN 2.0</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.1 Claridad y legibilidad de los diagramas</h3>
+                  <p>Los diagramas BPMN deben ser claros y fáciles de entender, utilizando nombres descriptivos para las actividades, organizando los elementos de manera lógica y evitando la sobrecarga visual.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.2 Nivel de detalle apropiado</h3>
+                  <p>El nivel de detalle debe ser adecuado para la audiencia y el propósito del diagrama, evitando tanto la simplificación excesiva como el exceso de detalles que pueden confundir.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.3 Consistencia en la notación</h3>
+                  <p>Mantener la consistencia en el uso de la notación BPMN es crucial para facilitar la comprensión y evitar confusiones, siguiendo las convenciones establecidas por el estándar.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">5. Herramientas para el Modelado en BPMN 2.0</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.1 Visión general de herramientas populares</h3>
+                  <p>Existen numerosas herramientas para el modelado BPMN, desde soluciones gratuitas y de código abierto hasta plataformas empresariales completas con capacidades avanzadas.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.2 Criterios para seleccionar una herramienta de modelado</h3>
+                  <p>La selección de una herramienta de modelado BPMN debe considerar factores como funcionalidad, usabilidad, soporte para el estándar BPMN 2.0, capacidades de colaboración y costo.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">5.3 Introducción a una herramienta de modelado BPMN</h3>
+                  <p>Una introducción práctica a una herramienta de modelado BPMN ayuda a comprender cómo aplicar los conceptos teóricos en la práctica y comenzar a crear diagramas efectivos.</p>
+                  <div class="diagram-container">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Herramienta de modelado BPMN" class="diagram-image">
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div id="tab-resources" class="tab-content">
+              <div class="resources-container">
+                <h3 class="resources-title">Recursos adicionales</h3>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="file-text"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Guía de BPMN para principiantes</h4>
+                    <p>Una guía completa sobre los conceptos básicos de BPMN y su aplicación en organizaciones.</p>
+                    <a href="#" class="resource-link">Descargar PDF</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="video"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Video: Introducción a BPMN 2.0</h4>
+                    <p>Una explicación visual de los conceptos fundamentales de la notación BPMN 2.0.</p>
+                    <a href="#" class="resource-link">Ver video</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="link"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Enlaces recomendados</h4>
+                    <ul class="resource-links">
+                      <li><a href="#">Especificación oficial de BPMN 2.0</a></li>
+                      <li><a href="#">Glosario de términos de BPMN</a></li>
+                      <li><a href="#">Ejemplos de diagramas BPMN</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div id="tab-exercises" class="tab-content">
+              <div class="exercises-container">
+                <h3 class="exercises-title">Ejercicios prácticos</h3>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 1: Identificación de elementos BPMN</h4>
+                    <span class="exercise-badge">Básico</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Identifica los elementos básicos de BPMN en un diagrama dado y explica su función en el proceso.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 2: Creación de un diagrama simple</h4>
+                    <span class="exercise-badge">Intermedio</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Crea un diagrama BPMN para un proceso simple de aprobación de solicitudes utilizando los elementos básicos de BPMN.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 3: Análisis de un diagrama BPMN</h4>
+                    <span class="exercise-badge">Avanzado</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Analiza el diagrama BPMN proporcionado e identifica posibles mejoras en términos de claridad, legibilidad y adherencia a las mejores prácticas.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Descargar diagrama</button>
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navegación del capítulo -->
+        <div class="chapter-navigation">
+          <a href="bpm-capitulo3.html" class="nav-button prev">
+            <i data-feather="arrow-left"></i>
+            Anterior: BPM Implementación
+          </a>
+          <div class="nav-spacer"></div>
+          <a href="bpmn-capitulo2.html" class="nav-button next">
+            Siguiente: BPMN Elementos Avanzados
+            <i data-feather="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">BPM & BPMN Portal</div>
+          <div class="footer-copyright">&copy; <span id="current-year">2025</span> Portal Educativo de BPM y BPMN 2.0</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

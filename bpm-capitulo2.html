@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 2: BPM Metodologías - Portal Educativo de BPM y BPMN 2.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chapter-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Overlay para menú móvil -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Sidebar / Navegación lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i data-feather="activity"></i>
+          <span class="logo-text">BPM Portal</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i data-feather="chevron-left"></i>
+        </button>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-category">Categorías</div>
+        
+        <!-- Acordeón para BPM -->
+        <button class="accordion-toggle active" id="bpm-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="layers"></i>
+            </div>
+            <span class="accordion-text">BPM</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpm-content" style="max-height: 500px;">
+          <a href="bpm-capitulo1.html" class="accordion-item">
+            <span>Capítulo 1: Fundamentos</span>
+          </a>
+          <a href="bpm-capitulo2.html" class="accordion-item active">
+            <span>Capítulo 2: Metodologías</span>
+          </a>
+          <a href="bpm-capitulo3.html" class="accordion-item">
+            <span>Capítulo 3: Implementación</span>
+          </a>
+        </div>
+        
+        <!-- Acordeón para BPMN 2.0 -->
+        <button class="accordion-toggle" id="bpmn-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="git-branch"></i>
+            </div>
+            <span class="accordion-text">BPMN 2.0</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpmn-content">
+          <a href="bpmn-capitulo1.html" class="accordion-item">
+            <span>Capítulo 4: Introducción</span>
+          </a>
+          <a href="bpmn-capitulo2.html" class="accordion-item">
+            <span>Capítulo 5: Elementos Avanzados</span>
+          </a>
+          <a href="bpmn-capitulo3.html" class="accordion-item">
+            <span>Capítulo 6: Implementación</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menu-toggle">
+            <i data-feather="menu"></i>
+          </button>
+          <h2>Portal Educativo de BPM y BPMN 2.0</h2>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="theme-toggle">
+            <i data-feather="moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </header>
+      
+      <!-- Contenedor de página -->
+      <div class="page-container">
+        <!-- Dashboard del capítulo -->
+        <div class="dashboard">
+          <!-- Sidebar del dashboard -->
+          <div class="dashboard-sidebar">
+            <h3 class="dashboard-title">
+              <i data-feather="layers"></i>
+              Puntos Clave
+            </h3>
+            
+            <div class="key-points">
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="target"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Six Sigma</h4>
+                  <p>Metodología basada en datos para reducir la variabilidad y defectos en los procesos.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="trending-up"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Lean</h4>
+                  <p>Enfoque centrado en eliminar desperdicios y maximizar el valor para el cliente.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="refresh-cw"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Metodologías Ágiles</h4>
+                  <p>Adaptación de principios ágiles a la gestión de procesos de negocio.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="progress-container">
+              <div class="progress-label">Progreso del capítulo</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contenido principal del dashboard -->
+          <div class="dashboard-main">
+            <!-- Pestañas -->
+            <div class="tabs">
+              <button class="tab-button active" data-tab="tab-content">Contenido</button>
+              <button class="tab-button" data-tab="tab-resources">Recursos</button>
+              <button class="tab-button" data-tab="tab-exercises">Ejercicios</button>
+            </div>
+            
+            <!-- Contenido de las pestañas -->
+            <div id="tab-content" class="tab-content active">
+              <section class="section fade-in">
+                <h2 class="section-title">1. Visión General de las Metodologías BPM</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.1 Importancia de las metodologías en BPM</h3>
+                  <p>Las metodologías proporcionan un marco estructurado para implementar BPM de manera efectiva, asegurando un enfoque sistemático y coherente para la gestión de procesos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.2 Evolución de las metodologías BPM</h3>
+                  <p>Las metodologías BPM han evolucionado desde enfoques tradicionales centrados en la calidad hasta metodologías ágiles y adaptativas que responden a las necesidades cambiantes del entorno empresarial.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.3 Criterios para seleccionar una metodología BPM</h3>
+                  <p>La elección de una metodología BPM debe basarse en factores como la cultura organizacional, la madurez de los procesos, los objetivos estratégicos y los recursos disponibles.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">2. Metodología Six Sigma</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.1 Principios de Six Sigma</h3>
+                  <p>Six Sigma se basa en la reducción de la variabilidad de los procesos para minimizar defectos y mejorar la calidad, utilizando un enfoque estadístico riguroso para la toma de decisiones.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.2 DMAIC (Definir, Medir, Analizar, Mejorar, Controlar)</h3>
+                  <p>DMAIC es el ciclo de mejora de procesos utilizado en Six Sigma, que proporciona un enfoque estructurado para resolver problemas y optimizar procesos.</p>
+                  <div class="process-steps">
+                    <div class="process-step" id="step-define">
+                      <div class="step-icon">
+                        <i data-feather="target"></i>
+                      </div>
+                      <div class="step-content">
+                        <h4>Definir</h4>
+                        <p>Identificar el problema, establecer objetivos y definir el alcance del proyecto.</p>
+                      </div>
+                    </div>
+                    <div class="process-step" id="step-measure">
+                      <div class="step-icon">
+                        <i data-feather="bar-chart-2"></i>
+                      </div>
+                      <div class="step-content">
+                        <h4>Medir</h4>
+                        <p>Recopilar datos relevantes y establecer métricas para evaluar el rendimiento actual.</p>
+                      </div>
+                    </div>
+                    <div class="process-step" id="step-analyze">
+                      <div class="step-icon">
+                        <i data-feather="search"></i>
+                      </div>
+                      <div class="step-content">
+                        <h4>Analizar</h4>
+                        <p>Identificar las causas raíz de los problemas mediante análisis estadístico.</p>
+                      </div>
+                    </div>
+                    <div class="process-step" id="step-improve">
+                      <div class="step-icon">
+                        <i data-feather="trending-up"></i>
+                      </div>
+                      <div class="step-content">
+                        <h4>Mejorar</h4>
+                        <p>Desarrollar e implementar soluciones para abordar las causas raíz.</p>
+                      </div>
+                    </div>
+                    <div class="process-step" id="step-control">
+                      <div class="step-icon">
+                        <i data-feather="check-circle"></i>
+                      </div>
+                      <div class="step-content">
+                        <h4>Controlar</h4>
+                        <p>Establecer controles para mantener las mejoras y prevenir la recurrencia de problemas.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.3 Herramientas y técnicas de Six Sigma</h3>
+                  <p>Six Sigma utiliza diversas herramientas como diagramas de Pareto, análisis de causa-efecto, diseño de experimentos y control estadístico de procesos para identificar y resolver problemas.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">3. Metodología Lean</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.1 Principios del pensamiento Lean</h3>
+                  <p>Lean se centra en maximizar el valor para el cliente mientras se minimiza el desperdicio, a través de la mejora continua y el respeto por las personas involucradas en los procesos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.2 Identificación y eliminación de desperdicios</h3>
+                  <p>Lean identifica siete tipos principales de desperdicios (sobreproducción, espera, transporte, sobreprocesamiento, inventario, movimiento y defectos) que deben ser eliminados para mejorar la eficiencia.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">3.3 Herramientas Lean para la mejora de procesos</h3>
+                  <p>Lean utiliza herramientas como Value Stream Mapping, 5S, Kanban, Poka-Yoke y Kaizen para identificar oportunidades de mejora y eliminar desperdicios.</p>
+                  <div class="tools-grid">
+                    <div class="tool-card" id="tool-vsm">
+                      <div class="tool-icon">
+                        <i data-feather="map"></i>
+                      </div>
+                      <h4>Value Stream Mapping</h4>
+                      <p>Visualiza el flujo de valor para identificar desperdicios y oportunidades de mejora.</p>
+                    </div>
+                    <div class="tool-card" id="tool-5s">
+                      <div class="tool-icon">
+                        <i data-feather="layers"></i>
+                      </div>
+                      <h4>5S</h4>
+                      <p>Organiza el espacio de trabajo para maximizar la eficiencia y efectividad.</p>
+                    </div>
+                    <div class="tool-card" id="tool-kanban">
+                      <div class="tool-icon">
+                        <i data-feather="trello"></i>
+                      </div>
+                      <h4>Kanban</h4>
+                      <p>Sistema visual para gestionar el flujo de trabajo y limitar el trabajo en progreso.</p>
+                    </div>
+                    <div class="tool-card" id="tool-kaizen">
+                      <div class="tool-icon">
+                        <i data-feather="refresh-cw"></i>
+                      </div>
+                      <h4>Kaizen</h4>
+                      <p>Enfoque de mejora continua a través de pequeños cambios incrementales.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">4. Metodología de Reingeniería de Procesos</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.1 Conceptos fundamentales de la reingeniería</h3>
+                  <p>La reingeniería implica el rediseño radical de los procesos de negocio para lograr mejoras dramáticas en medidas críticas de rendimiento como costo, calidad, servicio y velocidad.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.2 Fases de la reingeniería de procesos</h3>
+                  <p>La reingeniería típicamente incluye fases de preparación, identificación, visión, solución técnica y social, y transformación, con un enfoque en el cambio fundamental de los procesos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.3 Beneficios y desafíos de la reingeniería</h3>
+                  <p>La reingeniería puede proporcionar mejoras significativas en el rendimiento, pero también enfrenta desafíos como la resistencia al cambio, altos costos de implementación y riesgos asociados con cambios radicales.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">5. Metodologías Ágiles en BPM</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.1 Principios ágiles aplicados a BPM</h3>
+                  <p>La aplicación de principios ágiles a BPM enfatiza la adaptabilidad, la colaboración, la entrega incremental de valor y la respuesta rápida al cambio en la gestión de procesos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.2 Scrum en la gestión de procesos</h3>
+                  <p>Scrum proporciona un marco para la gestión ágil de proyectos de BPM, con roles definidos, eventos regulares y artefactos que facilitan la transparencia y la adaptación continua.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">5.3 Kanban para la mejora continua de procesos</h3>
+                  <p>Kanban ofrece un enfoque visual para gestionar el flujo de trabajo, limitar el trabajo en progreso y facilitar la mejora continua de los procesos de negocio.</p>
+                  <div class="kanban-board">
+                    <div class="kanban-column">
+                      <div class="column-header">Por hacer</div>
+                      <div class="kanban-cards">
+                        <div class="kanban-card">
+                          <div class="card-tag" style="background-color: var(--primary);">Análisis</div>
+                          <div class="card-title">Mapeo de procesos actuales</div>
+                        </div>
+                        <div class="kanban-card">
+                          <div class="card-tag" style="background-color: var(--secondary);">Diseño</div>
+                          <div class="card-title">Definir métricas de rendimiento</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="kanban-column">
+                      <div class="column-header">En progreso</div>
+                      <div class="kanban-cards">
+                        <div class="kanban-card">
+                          <div class="card-tag" style="background-color: var(--accent);">Implementación</div>
+                          <div class="card-title">Configurar sistema de monitoreo</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="kanban-column">
+                      <div class="column-header">Completado</div>
+                      <div class="kanban-cards">
+                        <div class="kanban-card">
+                          <div class="card-tag" style="background-color: #14b8a6;">Evaluación</div>
+                          <div class="card-title">Análisis de requisitos</div>
+                        </div>
+                        <div class="kanban-card">
+                          <div class="card-tag" style="background-color: #f43f5e;">Planificación</div>
+                          <div class="card-title">Definir alcance del proyecto</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div id="tab-resources" class="tab-content">
+              <div class="resources-container">
+                <h3 class="resources-title">Recursos adicionales</h3>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="file-text"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Guía de Six Sigma</h4>
+                    <p>Manual completo sobre la metodología Six Sigma y su aplicación en diferentes contextos empresariales.</p>
+                    <a href="#" class="resource-link">Descargar PDF</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="video"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Video: Introducción a Lean</h4>
+                    <p>Una explicación visual de los principios y herramientas del pensamiento Lean.</p>
+                    <a href="#" class="resource-link">Ver video</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="link"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Enlaces recomendados</h4>
+                    <ul class="resource-links">
+                      <li><a href="#">Instituto de Six Sigma</a></li>
+                      <li><a href="#">Comunidad Lean Global</a></li>
+                      <li><a href="#">Recursos de Metodologías Ágiles</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div id="tab-exercises" class="tab-content">
+              <div class="exercises-container">
+                <h3 class="exercises-title">Ejercicios prácticos</h3>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 1: Análisis DMAIC</h4>
+                    <span class="exercise-badge">Básico</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Identifica un problema en un proceso de tu organización y aplica las cinco fases del ciclo DMAIC para abordarlo.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 2: Identificación de desperdicios Lean</h4>
+                    <span class="exercise-badge">Intermedio</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Analiza un proceso de tu organización e identifica ejemplos de los siete tipos de desperdicios según la metodología Lean.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 3: Implementación de Kanban</h4>
+                    <span class="exercise-badge">Avanzado</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Diseña un sistema Kanban para gestionar un proceso de tu organización, definiendo columnas, límites de trabajo en progreso y políticas.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Descargar plantilla</button>
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navegación del capítulo -->
+        <div class="chapter-navigation">
+          <a href="bpm-capitulo1.html" class="nav-button prev">
+            <i data-feather="arrow-left"></i>
+            Anterior: BPM Fundamentos
+          </a>
+          <div class="nav-spacer"></div>
+          <a href="bpm-capitulo3.html" class="nav-button next">
+            Siguiente: BPM Implementación
+            <i data-feather="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">BPM & BPMN Portal</div>
+          <div class="footer-copyright">&copy; <span id="current-year">2025</span> Portal Educativo de BPM y BPMN 2.0</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

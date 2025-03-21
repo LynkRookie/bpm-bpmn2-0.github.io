@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 3: BPM Implementación - Portal Educativo de BPM y BPMN 2.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chapter-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Overlay para menú móvil -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Sidebar / Navegación lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i data-feather="activity"></i>
+          <span class="logo-text">BPM Portal</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i data-feather="chevron-left"></i>
+        </button>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-category">Categorías</div>
+        
+        <!-- Acordeón para BPM -->
+        <button class="accordion-toggle active" id="bpm-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="layers"></i>
+            </div>
+            <span class="accordion-text">BPM</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpm-content" style="max-height: 500px;">
+          <a href="bpm-capitulo1.html" class="accordion-item">
+            <span>Capítulo 1: Fundamentos</span>
+          </a>
+          <a href="bpm-capitulo2.html" class="accordion-item">
+            <span>Capítulo 2: Metodologías</span>
+          </a>
+          <a href="bpm-capitulo3.html" class="accordion-item active">
+            <span>Capítulo 3: Implementación</span>
+          </a>
+        </div>
+        
+        <!-- Acordeón para BPMN 2.0 -->
+        <button class="accordion-toggle" id="bpmn-toggle">
+          <div class="accordion-header">
+            <div class="accordion-icon">
+              <i data-feather="git-branch"></i>
+            </div>
+            <span class="accordion-text">BPMN 2.0</span>
+          </div>
+          <i data-feather="chevron-down" class="accordion-arrow"></i>
+        </button>
+        <div class="accordion-content" id="bpmn-content">
+          <a href="bpmn-capitulo1.html" class="accordion-item">
+            <span>Capítulo 4: Introducción</span>
+          </a>
+          <a href="bpmn-capitulo2.html" class="accordion-item">
+            <span>Capítulo 5: Elementos Avanzados</span>
+          </a>
+          <a href="bpmn-capitulo3.html" class="accordion-item">
+            <span>Capítulo 6: Implementación</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menu-toggle">
+            <i data-feather="menu"></i>
+          </button>
+          <h2>Portal Educativo de BPM y BPMN 2.0</h2>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="theme-toggle">
+            <i data-feather="moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </header>
+      
+      <!-- Contenedor de página -->
+      <div class="page-container">
+        <!-- Dashboard del capítulo -->
+        <div class="dashboard">
+          <!-- Sidebar del dashboard -->
+          <div class="dashboard-sidebar">
+            <h3 class="dashboard-title">
+              <i data-feather="layers"></i>
+              Puntos Clave
+            </h3>
+            
+            <div class="key-points">
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="clipboard"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Planificación</h4>
+                  <p>Evaluación de madurez, definición de objetivos y creación de equipos de implementación.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="tool"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Herramientas</h4>
+                  <p>Selección de software BPM adecuado e integración con sistemas existentes.</p>
+                </div>
+              </div>
+              
+              <div class="key-point">
+                <div class="key-point-icon">
+                  <i data-feather="bar-chart-2"></i>
+                </div>
+                <div class="key-point-content">
+                  <h4>Monitoreo</h4>
+                  <p>Establecimiento de KPIs y técnicas para la mejora continua de procesos.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="progress-container">
+              <div class="progress-label">Progreso del capítulo</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contenido principal del dashboard -->
+          <div class="dashboard-main">
+            <!-- Pestañas -->
+            <div class="tabs">
+              <button class="tab-button active" data-tab="tab-content">Contenido</button>
+              <button class="tab-button" data-tab="tab-resources">Recursos</button>
+              <button class="tab-button" data-tab="tab-exercises">Ejercicios</button>
+            </div>
+            
+            <!-- Contenido de las pestañas -->
+            <div id="tab-content" class="tab-content active">
+              <section class="section fade-in">
+                <h2 class="section-title">1. Planificación de la Implementación de BPM</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.1 Evaluación de la madurez de procesos</h3>
+                  <p>Antes de implementar BPM, es crucial evaluar el nivel de madurez de los procesos existentes para establecer una línea base y determinar las áreas que requieren mayor atención.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.2 Definición de objetivos y alcance</h3>
+                  <p>Establecer objetivos claros y un alcance bien definido para la implementación de BPM ayuda a mantener el enfoque y asegurar que los esfuerzos estén alineados con las metas estratégicas de la organización.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">1.3 Creación de un equipo de implementación</h3>
+                  <p>Un equipo multidisciplinario con roles y responsabilidades claramente definidos es fundamental para el éxito de la implementación de BPM.</p>
+                  <div class="team-structure">
+                    <div class="team-member" id="sponsor">
+                      <div class="member-avatar">
+                        <i data-feather="user"></i>
+                      </div>
+                      <div class="member-info">
+                        <h4>Patrocinador Ejecutivo</h4>
+                        <p>Proporciona dirección estratégica y recursos</p>
+                      </div>
+                    </div>
+                    <div class="team-member" id="bpm-leader">
+                      <div class="member-avatar">
+                        <i data-feather="briefcase"></i>
+                      </div>
+                      <div class="member-info">
+                        <h4>Líder de BPM</h4>
+                        <p>Coordina la implementación y gestiona el cambio</p>
+                      </div>
+                    </div>
+                    <div class="team-member" id="process-owner">
+                      <div class="member-avatar">
+                        <i data-feather="flag"></i>
+                      </div>
+                      <div class="member-info">
+                        <h4>Dueño del Proceso</h4>
+                        <p>Responsable del rendimiento del proceso</p>
+                      </div>
+                    </div>
+                    <div class="team-member" id="process-analyst">
+                      <div class="member-avatar">
+                        <i data-feather="search"></i>
+                      </div>
+                      <div class="member-info">
+                        <h4>Analista de Procesos</h4>
+                        <p>Documenta y analiza los procesos</p>
+                      </div>
+                    </div>
+                    <div class="team-member" id="it-specialist">
+                      <div class="member-avatar">
+                        <i data-feather="code"></i>
+                      </div>
+                      <div class="member-info">
+                        <h4>Especialista en TI</h4>
+                        <p>Implementa soluciones tecnológicas</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">1.4 Desarrollo de una hoja de ruta de BPM</h3>
+                  <p>Una hoja de ruta detallada con hitos, plazos y entregables proporciona una guía clara para la implementación de BPM y ayuda a gestionar las expectativas de los interesados.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">2. Selección de Herramientas y Tecnologías BPM</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.1 Tipos de herramientas BPM</h3>
+                  <p>Existen diversas categorías de herramientas BPM, incluyendo modelado de procesos, automatización de flujos de trabajo, monitoreo de actividades empresariales y análisis de procesos, cada una con funcionalidades específicas.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">2.2 Criterios para la selección de software BPM</h3>
+                  <p>La selección de software BPM debe basarse en criterios como funcionalidad, usabilidad, escalabilidad, soporte, costo total de propiedad y alineación con las necesidades específicas de la organización.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">2.3 Integración con sistemas existentes</h3>
+                  <p>La capacidad de integración con sistemas existentes es crucial para el éxito de la implementación de BPM, permitiendo un flujo de información continuo y evitando la creación de silos de datos.</p>
+                  <div class="integration-diagram">
+                    <div class="central-system">
+                      <i data-feather="cpu"></i>
+                      <span>Sistema BPM</span>
+                    </div>
+                    <div class="connected-systems">
+                      <div class="system-node" id="erp">
+                        <i data-feather="database"></i>
+                        <span>ERP</span>
+                      </div>
+                      <div class="system-node" id="crm">
+                        <i data-feather="users"></i>
+                        <span>CRM</span>
+                      </div>
+                      <div class="system-node" id="ecm">
+                        <i data-feather="file-text"></i>
+                        <span>ECM</span>
+                      </div>
+                      <div class="system-node" id="bi">
+                        <i data-feather="bar-chart"></i>
+                        <span>BI</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">3. Diseño y Modelado de Procesos</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.1 Identificación y priorización de procesos clave</h3>
+                  <p>Identificar y priorizar los procesos más críticos para la organización permite enfocar los esfuerzos de mejora donde tendrán el mayor impacto en los resultados del negocio.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.2 Técnicas de modelado de procesos</h3>
+                  <p>Existen diversas técnicas de modelado como BPMN, diagramas de flujo, mapas de valor y diagramas SIPOC, cada una con ventajas específicas para diferentes contextos y objetivos.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">3.3 Documentación y estandarización de procesos</h3>
+                  <p>La documentación clara y la estandarización de procesos facilitan la comunicación, el entrenamiento y la mejora continua, estableciendo una base sólida para la gestión de procesos.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">4. Automatización y Ejecución de Procesos</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.1 Implementación de flujos de trabajo automatizados</h3>
+                  <p>La automatización de flujos de trabajo elimina tareas manuales repetitivas, reduce errores y mejora la eficiencia, permitiendo a los empleados centrarse en actividades de mayor valor.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">4.2 Gestión de reglas de negocio</h3>
+                  <p>Las reglas de negocio definen la lógica que gobierna los procesos, y su gestión efectiva permite mayor agilidad y adaptabilidad ante cambios en requisitos o regulaciones.</p>
+                  <div class="rules-engine">
+                    <div class="rule-example">
+                      <div class="rule-header">
+                        <i data-feather="check-square"></i>
+                        <h4>Regla de Aprobación</h4>
+                      </div>
+                      <div class="rule-content">
+                        <p><strong>SI</strong> monto > $10,000 <strong>ENTONCES</strong> requiere aprobación del director financiero</p>
+                      </div>
+                    </div>
+                    <div class="rule-example">
+                      <div class="rule-header">
+                        <i data-feather="alert-triangle"></i>
+                        <h4>Regla de Escalamiento</h4>
+                      </div>
+                      <div class="rule-content">
+                        <p><strong>SI</strong> tiempo de respuesta > 24 horas <strong>ENTONCES</strong> escalar al supervisor</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">4.3 Integración de datos y sistemas</h3>
+                  <p>La integración efectiva de datos y sistemas asegura que la información fluya sin problemas a través de los procesos, eliminando la duplicación de esfuerzos y mejorando la calidad de los datos.</p>
+                </div>
+              </section>
+
+              <section class="section fade-in">
+                <h2 class="section-title">5. Monitoreo y Mejora Continua</h2>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.1 Establecimiento de KPIs de procesos</h3>
+                  <p>Los indicadores clave de rendimiento (KPIs) proporcionan una medida objetiva del desempeño de los procesos, permitiendo identificar áreas de mejora y evaluar el impacto de los cambios implementados.</p>
+                </div>
+                <div class="content-block">
+                  <h3 class="subsection-title">5.2 Técnicas de análisis y optimización de procesos</h3>
+                  <p>Técnicas como el análisis de cuellos de botella, simulación de procesos y análisis de causa raíz ayudan a identificar oportunidades de mejora y optimizar el rendimiento de los procesos.</p>
+                </div>
+                <div class="content-block interactive-block">
+                  <h3 class="subsection-title">5.3 Gestión del cambio y cultura de mejora continua</h3>
+                  <p>La implementación exitosa de BPM requiere una gestión efectiva del cambio y el desarrollo de una cultura organizacional que valore y promueva la mejora continua de los procesos.</p>
+                  <div class="continuous-improvement-cycle">
+                    <div class="cycle-step" id="plan">
+                      <div class="step-icon">
+                        <i data-feather="edit-3"></i>
+                      </div>
+                      <span>Planificar</span>
+                    </div>
+                    <div class="cycle-step" id="do">
+                      <div class="step-icon">
+                        <i data-feather="play"></i>
+                      </div>
+                      <span>Hacer</span>
+                    </div>
+                    <div class="cycle-step" id="check">
+                      <div class="step-icon">
+                        <i data-feather="check-circle"></i>
+                      </div>
+                      <span>Verificar</span>
+                    </div>
+                    <div class="cycle-step" id="act">
+                      <div class="step-icon">
+                        <i data-feather="refresh-cw"></i>
+                      </div>
+                      <span>Actuar</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div id="tab-resources" class="tab-content">
+              <div class="resources-container">
+                <h3 class="resources-title">Recursos adicionales</h3>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="file-text"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Guía de implementación BPM</h4>
+                    <p>Manual paso a paso para implementar BPM en organizaciones de diferentes tamaños y sectores.</p>
+                    <a href="#" class="resource-link">Descargar PDF</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="video"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Video: Selección de herramientas BPM</h4>
+                    <p>Análisis comparativo de las principales herramientas BPM disponibles en el mercado.</p>
+                    <a href="#" class="resource-link">Ver video</a>
+                  </div>
+                </div>
+                
+                <div class="resource-card">
+                  <div class="resource-icon">
+                    <i data-feather="link"></i>
+                  </div>
+                  <div class="resource-content">
+                    <h4>Enlaces recomendados</h4>
+                    <ul class="resource-links">
+                      <li><a href="#">Comparativa de software BPM</a></li>
+                      <li><a href="#">Plantillas de documentación de procesos</a></li>
+                      <li><a href="#">Ejemplos de KPIs para procesos de negocio</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div id="tab-exercises" class="tab-content">
+              <div class="exercises-container">
+                <h3 class="exercises-title">Ejercicios prácticos</h3>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 1: Evaluación de madurez</h4>
+                    <span class="exercise-badge">Básico</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Utiliza el modelo de madurez de procesos proporcionado para evaluar el nivel de madurez BPM de tu organización.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 2: Selección de herramientas</h4>
+                    <span class="exercise-badge">Intermedio</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Define los criterios de selección para una herramienta BPM en tu organización y evalúa tres opciones del mercado según estos criterios.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="exercise-card">
+                  <div class="exercise-header">
+                    <h4>Ejercicio 3: Plan de implementación</h4>
+                    <span class="exercise-badge">Avanzado</span>
+                  </div>
+                  <div class="exercise-content">
+                    <p>Desarrolla un plan de implementación BPM completo para un proceso específico, incluyendo evaluación, diseño, implementación y monitoreo.</p>
+                    <div class="exercise-actions">
+                      <button class="button secondary">Descargar plantilla</button>
+                      <button class="button secondary">Ver solución</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navegación del capítulo -->
+        <div class="chapter-navigation">
+          <a href="bpm-capitulo2.html" class="nav-button prev">
+            <i data-feather="arrow-left"></i>
+            Anterior: BPM Metodologías
+          </a>
+          <div class="nav-spacer"></div>
+          <a href="bpmn-capitulo1.html" class="nav-button next">
+            Siguiente: BPMN 2.0 Introducción
+            <i data-feather="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">BPM & BPMN Portal</div>
+          <div class="footer-copyright">&copy; <span id="current-year">2025</span> Portal Educativo de BPM y BPMN 2.0</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
